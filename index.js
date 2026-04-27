@@ -18,7 +18,7 @@ const client = new Client({
   ]
 });
 
-const prefix = "!";
+const prefix = "/";
 
 // 🚀 Bot pronto
 client.once('ready', () => {
