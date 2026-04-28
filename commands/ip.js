@@ -18,7 +18,8 @@ module.exports = {
       const data = await res.json();
 
       if (data.status === "fail") {
-        return interaction.reply("❌ IP inválido.");
+        // Adicionado ephemeral: true aqui
+        return interaction.reply({ content: "❌ IP inválido.", ephemeral: true });
       }
 
       const embed = new EmbedBuilder()
@@ -31,9 +32,11 @@ module.exports = {
         )
         .setColor("Purple");
 
-      await interaction.reply({ embeds: [embed] });
+      // Adicionado ephemeral: true aqui
+      await interaction.reply({ embeds: [embed], ephemeral: true });
     } catch {
-      await interaction.reply("❌ Erro ao buscar IP.");
+      // Adicionado ephemeral: true aqui
+      await interaction.reply({ content: "❌ Erro ao buscar IP.", ephemeral: true });
     }
   }
 };
